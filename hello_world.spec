@@ -5,8 +5,7 @@ Summary: A simple Hello, World! Python script
 
 License: MIT
 URL: https://github.com/Jeka4el/HelloWorld-CI
-Source0: %{name}-%{version}.tar.gz
-
+Source0: hello_world.py
 BuildArch: noarch
 
 %description
