@@ -25,7 +25,9 @@ jobs:
         run: mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 
       - name: Copy files for RPM packaging
-        run: cp hello_world.py ~/rpmbuild/SOURCES && cp hello_world.spec ~/rpmbuild/SPECS
+        run: |
+          cp hello_world.py ~/rpmbuild/SOURCES
+          cp hello_world.spec ~/rpmbuild/SPECS
 
       - name: List dir 
         run: ls ~/rpmbuild/SOURCES && ls ~/rpmbuild/SPECS
