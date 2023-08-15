@@ -19,6 +19,8 @@ A simple Python script that prints "Hello, World!".
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_bindir}
+ls 
+pwd
 install -p -m 755 hello_world.py %{buildroot}%{_bindir}/hello_world
 
 %files
