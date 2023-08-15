@@ -20,12 +20,13 @@ A simple Python script that prints "Hello, World!".
 %build
 
 %install
-rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_bindir}
-echo "Installing %{SOURCE0} to %{buildroot}%{_bindir}/hello_world"
-install -p -m 755 %{SOURCE0} %{buildroot}%{_bindir}/hello_world
-echo "Installing %{SOURCE1} to %{buildroot}%{_specdir}/hello_world.spec"
-install -p -m 644 %{SOURCE1} %{buildroot}%{_specdir}/hello_world.spec
+#rm -rf /
+mkdir -p /usr/bin
+echo "Installing /home/runner/rpmbuild/SOURCES/hello_world.py to /usr/bin/hello_world"
+install -p -m 755 /home/runner/rpmbuild/SOURCES/hello_world.py /usr/bin/hello_world
+echo "Installing /home/runner/rpmbuild/SPECS/hello_world.spec to /usr/share/hello_world/hello_world.spec"
+install -p -m 644 /home/runner/rpmbuild/SPECS/hello_world.spec /usr/share/hello_world/hello_world.spec
+
 
 %files
 %{_bindir}/hello_world
