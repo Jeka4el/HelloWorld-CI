@@ -24,12 +24,11 @@ A simple Python script that prints "Hello, World!".
 mkdir -p %{buildroot}%{_bindir}
 ls %{buildroot}
 ls %{SOURCE0}
-ls %{SOURCE1}
+ls /home/runner/rpmbuild/SPECS/
 ls %{buildroot}
 ls %{_specdir}
 install -p -m 755 %{SOURCE0} %{buildroot}%{_bindir}/hello_world
-echo "Installing %{SOURCE1} to %{buildroot}%{_specdir}/hello_world.spec"
-install -p -m 644 %{SOURCE1} %{buildroot}%{_specdir}/hello_world.spec
+install -p -m 644 /home/runner/rpmbuild/SPECS/hello_world.spec %{buildroot}%{_specdir}/hello_world.spec
 
 
 %files
