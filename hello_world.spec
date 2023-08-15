@@ -7,7 +7,7 @@ URL: https://github.com/Jeka4el/HelloWorld-CI
 
 # Используем абсолютные пути к файлам
 Source0: %{_sourcedir}/hello_world.py
-Source1: %{_sourcedir}/hello_world.spec
+Source1: %{_specdir}/hello_world.spec
 
 BuildArch: noarch
 
