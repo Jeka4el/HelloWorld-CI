@@ -26,14 +26,14 @@ jobs:
         run: mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 
       - name: Copy files for RPM packaging
-        run: cp hello_world.py ~/rpmbuild/SOURCES && cp hello_world.spec ~/rpmbuild/SOURCES
+        run: cp hello_world.py ~/rpmbuild/SOURCES && cp hello_world.spec ~/rpmbuild/SPECS
           
 
       - name: List dir 
         run: ls ~/rpmbuild/SOURCES && ls ~/rpmbuild/SPECS
 
       - name: Build RPM package
-        run: rpmbuild -ba ~/rpmbuild/SOURCES/hello_world.spec
+        run: rpmbuild -ba ~/rpmbuild/SPECS/hello_world.spec
 
       - name: Upload RPM package to GitHub Packages
         uses: actions/upload-artifact@v2
