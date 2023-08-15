@@ -22,7 +22,11 @@ A simple Python script that prints "Hello, World!".
 %install
 #rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_bindir}
-echo "Installing %{SOURCE0} to %{buildroot}%{_bindir}/hello_world"
+ls %{buildroot}
+ls %{SOURCE0}
+ls %{SOURCE1}
+ls %{buildroot}
+ls %{_specdir}
 install -p -m 755 %{SOURCE0} %{buildroot}%{_bindir}/hello_world
 echo "Installing %{SOURCE1} to %{buildroot}%{_specdir}/hello_world.spec"
 install -p -m 644 %{SOURCE1} %{buildroot}%{_specdir}/hello_world.spec
