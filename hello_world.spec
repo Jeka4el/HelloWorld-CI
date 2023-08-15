@@ -12,7 +12,7 @@ BuildArch: noarch
 A simple Python script that prints "Hello, World!".
 
 %prep
-%setup -q
+#%setup -q
 
 %build
 
