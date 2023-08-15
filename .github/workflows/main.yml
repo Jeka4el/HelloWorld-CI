@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build_rpm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install rpmbuild
+        run: sudo apt-get install rpm
+
+      - name: Prepare RPM directory structure
+        run: mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+
+      - name: Copy files for RPM packaging
+        run: cp hello_world.py ~/rpmbuild/SOURCES && cp hello_world.spec ~/rpmbuild/SPECS
+
+      - name: Build RPM package
+        run: rpmbuild -ba ~/rpmbuild/SPECS/hello_world.spec
+
+      - name: Upload RPM package to GitHub Packages
+        uses: actions/upload-artifact@v2
+        with:
+          name: rpm-packages
+          path: ~/rpmbuild/RPMS/noarch
