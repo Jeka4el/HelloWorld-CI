@@ -6,8 +6,8 @@ License: MIT
 URL: https://github.com/Jeka4el/HelloWorld-CI
 
 # Используем абсолютные пути к файлам
-Source0: hello_world.py
-Source1: hello_world.spec
+Source0: /home/runner/rpmbuild/SOURCES/hello_world.py
+Source1: /home/runner/rpmbuild/SPECS/hello_world.spec
 
 BuildArch: noarch
 
