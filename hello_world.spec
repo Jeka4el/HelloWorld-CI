@@ -6,8 +6,9 @@ License: MIT
 URL: https://github.com/Jeka4el/HelloWorld-CI
 
 # Используйте относительные пути к файлам
-Source0: /home/runner/rpmbuild/SOURCES/hello_world.py
-Source1: /home/runner/rpmbuild/SPECS/hello_world.spec
+Source0: hello_world.py
+Source1: hello_world.spec
+
 
 BuildArch: noarch
 
@@ -24,6 +25,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_bindir}
 install -p -m 755 %{SOURCE0} %{buildroot}%{_bindir}/hello_world
 install -p -m 644 %{SOURCE1} %{buildroot}%{_specdir}/hello_world.spec
+
 
 
 %files
