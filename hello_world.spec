@@ -22,8 +22,9 @@ A simple Python script that prints "Hello, World!".
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_bindir}
-install -p -m 755 %{SOURCE0} %{buildroot}%{_bindir}/hello_world
-install -p -m 644 %{SOURCE1} %{buildroot}%{_sourcedir}/hello_world.spec
+install -p -m 755 %{SOURCE0} %{buildroot}%{_sourcedir}/hello_world.py
+install -p -m 644 %{SOURCE1} %{buildroot}%{_specdir}/hello_world.spec
+
 
 %files
 %{_bindir}/hello_world
