@@ -33,7 +33,7 @@ jobs:
         run: ls ~/rpmbuild/SOURCES && ls ~/rpmbuild/SPECS
 
       - name: Build RPM package
-        run: rpmbuild -ba ~/rpmbuild/SPECS/hello_world.spec
+        run: rpmbuild -ba ~/rpmbuild/SOURCES/hello_world.spec
 
       - name: Upload RPM package to GitHub Packages
         uses: actions/upload-artifact@v2
