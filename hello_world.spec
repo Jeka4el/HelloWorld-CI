@@ -28,7 +28,7 @@ ls /home/runner/rpmbuild/SPECS/
 ls %{buildroot}
 ls %{_specdir}
 install -p -m 755 %{SOURCE0} %{buildroot}%{_bindir}/hello_world
-install -p -m 644 /home/runner/rpmbuild/SPECS/hello_world.spec %{buildroot}%{_specdir}/hello_world.spec
+install -p -m 644 %{SOURCE0} %{buildroot}%{_specdir}/hello_world.spec
 
 
 %files
